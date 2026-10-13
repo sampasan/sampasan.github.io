@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8x8LEDマトリクスで画質について学ぼう！ - 直接平均</title>
+    <link rel="stylesheet" href="styles.css?v=direct-average-1" />
+  </head>
+  <body>
+    <h1>8x8LEDマトリクスで画質について学ぼう！</h1>
+    <p class="mode-label">比較版：8×8から直接平均</p>
+    <div class="container">
+      <div>
+        <div id="controls">
+          <button id="connectBtn">接続</button>
+          <button id="disconnectBtn">切断</button>
+          <button id="sendPatternBtn">パターン送信</button>
+          <button id="patternClearBtn">パターンクリア</button>
+          <button id="clearSerialBtn">シリアルクリア</button>
+          <span id="connStatus">接続していません</span>
+        </div>
+        <div class="pattern-editor">
+          <div id="matrix" class="matrix"></div>
+          <div class="resolution-selector" role="radiogroup" aria-label="送信解像度">
+            <label><input type="radio" name="resolution" value="8" checked />8×8</label>
+            <label><input type="radio" name="resolution" value="4" />4×4</label>
+            <label><input type="radio" name="resolution" value="2" />2×2</label>
+            <label><input type="radio" name="resolution" value="1" />1×1</label>
+          </div>
+        </div>
+        <div id="palette" class="palette"></div>
+        <div class="preview">送信プレビュー: <span id="previewText"></span></div>
+      </div>
+      <div id="historyContainer"></div>
+      <div class="serial-panel" id="serialPanel" aria-live="polite">Serial Monitor Placeholder</div>
+    </div>
+    <script src="script.js?v=direct-average-1"></script>
+  </body>
+</html>
