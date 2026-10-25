@@ -3,37 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>8x8LEDマトリクスで画質について学ぼう！ - 直接平均</title>
-    <link rel="stylesheet" href="styles.css?v=direct-average-1" />
+    <title>8x8LEDマトリクスで解像度について学ぼう！</title>
+    <link rel="stylesheet" href="styles.css?v=direct-average-9" />
   </head>
   <body>
-    <h1>8x8LEDマトリクスで画質について学ぼう！</h1>
-    <p class="mode-label">比較版：8×8から直接平均</p>
+    <h1>8x8LEDマトリクスで解像度について学ぼう！</h1>
     <div class="container">
       <div>
         <div id="controls">
-          <button id="connectBtn">接続</button>
-          <button id="disconnectBtn">切断</button>
           <button id="sendPatternBtn">パターン送信</button>
           <button id="patternClearBtn">パターンクリア</button>
           <button id="clearSerialBtn">シリアルクリア</button>
-          <span id="connStatus">接続していません</span>
         </div>
         <div class="pattern-editor">
-          <div id="matrix" class="matrix"></div>
-          <div class="resolution-selector" role="radiogroup" aria-label="送信解像度">
-            <label><input type="radio" name="resolution" value="8" checked />8×8</label>
-            <label><input type="radio" name="resolution" value="4" />4×4</label>
-            <label><input type="radio" name="resolution" value="2" />2×2</label>
-            <label><input type="radio" name="resolution" value="1" />1×1</label>
-          </div>
+          <section class="pattern-creation-panel" aria-label="点灯パターン作成">
+            <p class="pattern-note">8×8の点灯パターンのみ作れます</p>
+            <div class="matrix-wrap">
+              <div id="matrix" class="matrix"></div>
+              <div id="pixelHighlight" class="pixel-highlight" aria-hidden="true"></div>
+            </div>
+            <div id="palette" class="palette"></div>
+          </section>
+          <fieldset class="resolution-panel">
+            <legend>表示させる解像度</legend>
+            <table class="resolution-table">
+              <thead>
+                <tr>
+                  <th scope="col">解像度</th>
+                  <th scope="col">1ピクセルの大きさ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><label><input type="radio" name="resolution" value="8" checked />8×8</label></th>
+                  <td><div class="pixel-size-diagram" data-block-size="1" role="img" aria-label="1×1マスの図"></div></td>
+                </tr>
+                <tr>
+                  <th scope="row"><label><input type="radio" name="resolution" value="4" />4×4</label></th>
+                  <td><div class="pixel-size-diagram" data-block-size="2" role="img" aria-label="2×2マスの図"></div></td>
+                </tr>
+                <tr>
+                  <th scope="row"><label><input type="radio" name="resolution" value="2" />2×2</label></th>
+                  <td><div class="pixel-size-diagram" data-block-size="4" role="img" aria-label="4×4マスの図"></div></td>
+                </tr>
+                <tr>
+                  <th scope="row"><label><input type="radio" name="resolution" value="1" />1×1</label></th>
+                  <td><div class="pixel-size-diagram" data-block-size="8" role="img" aria-label="8×8マスの図"></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
         </div>
-        <div id="palette" class="palette"></div>
         <div class="preview">送信プレビュー: <span id="previewText"></span></div>
       </div>
       <div id="historyContainer"></div>
       <div class="serial-panel" id="serialPanel" aria-live="polite">Serial Monitor Placeholder</div>
     </div>
-    <script src="script.js?v=direct-average-1"></script>
+    <script src="script.js?v=direct-average-15"></script>
   </body>
 </html>
